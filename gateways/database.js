@@ -9,6 +9,6 @@ module.exports = {
   },
   async setup(db) {
     await db.collection('feeds').createIndex({ url: 1 }, { unique: true });
-    await db.collection('items').createIndex({ id: 1 }, { unique: true });
+    await db.collection('items').createIndex({ guid: 1 }, { unique: true });
   }
 };

@@ -26,14 +26,15 @@ module.exports = async (request) => {
         ...acc,
         ...feed.items,
       ];
-    }, []);
+    }, [])
+    .map(item => ({
+      guid: item.id || item.guid || item.link,
+      link: item.link,
+      publishedDate: new Date(item.pubDate),
+      author: item.author || item.creator,
+      content: item.content,
+      title: item.title,
+    }));
 
-  itemsGateway.insertItems(items.map(item => ({
-    _id: item.id || item.guid || item.link,
-    link: item.link,
-    publishedDate: item.pubDate,
-    author: item.author || item.creator,
-    content: item.content,
-    title: item.title,
-  })))
+  await itemsGateway.insertItems(items);
 };

@@ -16,11 +16,13 @@ MongoClient	gateways/database.js	/^const MongoClient = require('mongodb').MongoC
 Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
 RssParser	index.js	/^const RssParser = require('rss-parser');$/;"	c
+catch	gateways/items.js	/^      } catch (e) {$/;"	f
 catch	promisify.js	/^  } catch (e) {$/;"	f
 createFeed	gateways/feeds.js	/^  async createFeed(feedData) {$/;"	f
 exports	gateways/database.js	/^module.exports = {$/;"	o
 exports	gateways/feeds.js	/^module.exports = {$/;"	o
 exports	gateways/items.js	/^module.exports = {$/;"	o
+for	gateways/items.js	/^    for (let item of items) {$/;"	f
 getConnection	gateways/database.js	/^  async getConnection() {$/;"	f
 getFeeds	gateways/feeds.js	/^  async getFeeds() {$/;"	f
 getItems	gateways/items.js	/^  async getItems() {$/;"	f
