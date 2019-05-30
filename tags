@@ -4,35 +4,50 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-FEEDS_PATH	index.js	/^const FEEDS_PATH = '.\/feeds.txt';$/;"	n
+Api	client/services/api.js	/^class Api {$/;"	c
+App	client/App.js	/^class App {$/;"	c
+Container	client/Container.js	/^class Container {$/;"	c
 Finder	handlers/refreshFeeds.js	/^const rssFinder = require('rss-finder');$/;"	c
-Finder	index.js	/^const rssFinder = require('rss-finder');$/;"	c
 Gateway	handlers/createFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/getFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/getItems.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 ItemList	client/components/ItemList.js	/^class ItemList extends HTMLElement {$/;"	c
-Items	client/services/items.js	/^export const getItems = () => {$/;"	c
+ItemsService	client/services/items.js	/^class ItemsService {$/;"	c
 MongoClient	gateways/database.js	/^const MongoClient = require('mongodb').MongoClient;$/;"	c
 Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
-RssParser	index.js	/^const RssParser = require('rss-parser');$/;"	c
+add	client/Container.js	/^  add(identifier, factory) {$/;"	f
+boot	client/App.js	/^  boot() {$/;"	f
 catch	gateways/items.js	/^      } catch (e) {$/;"	f
 catch	promisify.js	/^  } catch (e) {$/;"	f
 connectedCallback	client/components/ItemList.js	/^  connectedCallback() {$/;"	f
+constructor	client/App.js	/^  constructor() {$/;"	f
+constructor	client/Container.js	/^  constructor() {$/;"	f
 constructor	client/components/ItemList.js	/^  constructor() {$/;"	f
 createFeed	gateways/feeds.js	/^  async createFeed(feedData) {$/;"	f
+executeRequest	client/services/api.js	/^  executeRequest(method, url, request = {}) {$/;"	f
 exports	gateways/database.js	/^module.exports = {$/;"	o
 exports	gateways/feeds.js	/^module.exports = {$/;"	o
 exports	gateways/items.js	/^module.exports = {$/;"	o
+factories	client/Container.js	/^    this.factories = {};$/;"	o
 for	gateways/items.js	/^    for (let item of items) {$/;"	f
+get	client/Container.js	/^  get(identifier) {$/;"	f
+get	client/services/api.js	/^  get(url, request = {}) {$/;"	f
+getAllItems	client/services/items.js	/^  getAllItems() {$/;"	f
 getConnection	gateways/database.js	/^  async getConnection() {$/;"	f
 getFeeds	gateways/feeds.js	/^  async getFeeds() {$/;"	f
 getItems	gateways/items.js	/^  async getItems() {$/;"	f
+headers	client/services/api.js	/^      headers: {$/;"	o
+if	client/Container.js	/^      if (!this.factories[identifier]) {$/;"	f
+if	client/Container.js	/^    if (!this.instances[identifier]) {$/;"	f
 if	client/components/ItemList.js	/^    if (this.isConnected) {$/;"	f
 insertItems	gateways/items.js	/^  async insertItems(items) {$/;"	f
+instances	client/Container.js	/^    this.instances = {};$/;"	o
+json	client/services/api.js	/^  json(request) {$/;"	f
 loadItems	client/components/ItemList.js	/^  async loadItems() {$/;"	f
+post	client/services/api.js	/^  post(url, request = {}) {$/;"	f
 renderItem	client/components/ItemList.js	/^  renderItem(item) {$/;"	f
 renderItems	client/components/ItemList.js	/^  renderItems() {$/;"	f
 setup	gateways/database.js	/^  async setup(db) {$/;"	f

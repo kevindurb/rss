@@ -1,9 +1,8 @@
-import * as itemService from '/services/items.js';
-
 class ItemList extends HTMLElement {
   constructor() {
     super();
     this.items = [];
+    this.itemService = window.container.get('itemsService');
   }
 
   connectedCallback() {
@@ -13,7 +12,7 @@ class ItemList extends HTMLElement {
   }
 
   async loadItems() {
-    this.items = await itemService.getItems();
+    this.items = await this.itemService.getAllItems();
     this.renderItems();
   }
 

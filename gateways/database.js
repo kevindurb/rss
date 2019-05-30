@@ -2,7 +2,9 @@ const MongoClient = require('mongodb').MongoClient;
 
 module.exports = {
   async getConnection() {
-    const client = await MongoClient.connect(process.env.MONGO_DB);
+    const client = await MongoClient.connect(process.env.MONGO_DB, {
+      useNewUrlParser: true,
+    });
     const db = client.db('feed-reader');
     await this.setup(db);
     return db;

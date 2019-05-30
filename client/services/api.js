@@ -1,3 +1,27 @@
-export const fetch = (request) => {
-  return window.fetch(request.url, request);
+class Api {
+  executeRequest(method, url, request = {}) {
+    return window.fetch(url, {
+      ...request,
+      method,
+      headers: {
+        ...request.headers,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then(this.json);
+  }
+
+  get(url, request = {}) {
+    return this.executeRequest('GET', url, request);
+  }
+
+  post(url, request = {}) {
+    return this.executeRequest('POST', url, request);
+  }
+
+  json(request) {
+    return request.json();
+  }
 }
+
+export default Api;

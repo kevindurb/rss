@@ -1,7 +1,13 @@
-import * as api from '/services/api.js';
+class ItemsService {
+  constructor(
+    api,
+  ) {
+    this.api = api;
+  }
 
-export const getItems = () => {
-  return api.fetch({
-    url: '/api/items',
-  }).then(res => res.json());
-};
+  getAllItems() {
+    return this.api.get('/api/items');
+  }
+}
+
+export default ItemsService;
