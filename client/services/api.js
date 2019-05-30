@@ -19,8 +19,12 @@ class Api {
     return this.executeRequest('POST', url, request);
   }
 
-  json(request) {
-    return request.json();
+  async json(request) {
+    try {
+      return await request.json();
+    } catch (e) {
+      return null;
+    }
   }
 }
 

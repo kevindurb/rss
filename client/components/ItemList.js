@@ -1,16 +1,19 @@
 import ListGroup from '../elements/ListGroup.js';
 import { formatDate } from '../utils/date.js';
+import * as events from '../constants/events.js';
 
 class ItemList extends HTMLElement {
   constructor() {
     super();
     this.items = [];
     this.itemService = window.container.get('itemsService');
+    this.eventEmitter = window.container.get('eventEmitter');
   }
 
   connectedCallback() {
     if (this.isConnected) {
       this.loadItems();
+      this.eventEmitter.addEventListener(events.FEEDS_REFRESHED, this.loadItems.bind(this));
     }
   }
 
@@ -51,6 +54,7 @@ class ItemList extends HTMLElement {
     const list = new ListGroup();
     const links = this.items.map(this.renderItem.bind(this));
     links.forEach(link => list.appendChild(link));
+    this.innerHTML = '';
     this.appendChild(list);
   }
 }

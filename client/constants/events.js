@@ -1,0 +1,1 @@
+export const FEEDS_REFRESHED = 'FEEDS_REFRESHED';
