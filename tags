@@ -9,6 +9,8 @@ App	client/App.js	/^class App {$/;"	c
 App	client/components/App.js	/^class App extends HTMLElement {$/;"	c
 Button	client/elements/Button.js	/^class Button extends HTMLButtonElement {$/;"	c
 Container	client/Container.js	/^class Container {$/;"	c
+Content	client/components/ItemList.js	/^    small.textContent = formatDate(item.publishedDate);$/;"	c
+Date	client/utils/date.js	/^export const formatDate = (input) => {$/;"	c
 FeedsService	client/services/Feeds.js	/^class FeedsService {$/;"	c
 Finder	handlers/refreshFeeds.js	/^const rssFinder = require('rss-finder');$/;"	c
 Gateway	handlers/createFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
@@ -20,8 +22,10 @@ ItemList	client/components/ItemList.js	/^class ItemList extends HTMLElement {$/;
 ItemsService	client/services/items.js	/^class ItemsService {$/;"	c
 ListGroup	client/elements/ListGroup.js	/^class ListGroup extends HTMLElement {$/;"	c
 MongoClient	gateways/database.js	/^const MongoClient = require('mongodb').MongoClient;$/;"	c
+OfDay	client/utils/date.js	/^  const startOfDay = getStartOfDay();$/;"	c
 Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
+StartOfDay	client/utils/date.js	/^export const getStartOfDay = () => {$/;"	c
 add	client/Container.js	/^  add(identifier, factory) {$/;"	f
 boot	client/App.js	/^  boot() {$/;"	f
 catch	gateways/items.js	/^      } catch (e) {$/;"	f
@@ -54,6 +58,7 @@ if	client/components/App.js	/^    if (this.isConnected) {$/;"	f
 if	client/components/ItemList.js	/^    if (this.isConnected) {$/;"	f
 if	client/elements/Button.js	/^    if (this.isConnected) {$/;"	f
 if	client/elements/ListGroup.js	/^    if (this.isConnected) {$/;"	f
+if	client/utils/date.js	/^  if (date > startOfDay) {$/;"	f
 insertItems	gateways/items.js	/^  async insertItems(items) {$/;"	f
 instances	client/Container.js	/^    this.instances = {};$/;"	o
 json	client/services/api.js	/^  json(request) {$/;"	f

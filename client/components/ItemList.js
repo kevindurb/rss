@@ -1,4 +1,5 @@
 import ListGroup from '../elements/ListGroup.js';
+import { formatDate } from '../utils/date.js';
 
 class ItemList extends HTMLElement {
   constructor() {
@@ -20,11 +21,29 @@ class ItemList extends HTMLElement {
 
   renderItem(item) {
     const a = document.createElement('a');
-    a.textContent = item.title;
     a.href = item.link;
     a.target = '_blank';
     a.classList.add('list-group-item');
     a.classList.add('list-group-item-action');
+
+    const top = document.createElement('div');
+    top.classList.add('d-flex');
+    top.classList.add('w-100');
+    top.classList.add('justify-content-between');
+
+    const h5 = document.createElement('h5');
+    h5.innerHTML = item.title;
+
+    const small = document.createElement('small');
+    small.textContent = formatDate(item.publishedDate);
+
+    const p = document.createElement('p');
+    p.innerHTML = item.content;
+
+    top.appendChild(h5);
+    top.appendChild(small);
+    a.appendChild(top);
+    a.appendChild(p);
     return a;
   }
 
