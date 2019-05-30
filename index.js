@@ -11,5 +11,5 @@ app.use('/api', require('./router'));
 app.use(express.static(path.join(__dirname, 'client')));
 
 app.listen(port, () => {
-  console.log(`Server started at http://localhost:8080/`);
+  console.log(`Server started at http://localhost:${port}/`);
 });
