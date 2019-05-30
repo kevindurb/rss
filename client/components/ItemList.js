@@ -1,3 +1,5 @@
+import ListGroup from '../elements/ListGroup.js';
+
 class ItemList extends HTMLElement {
   constructor() {
     super();
@@ -17,14 +19,23 @@ class ItemList extends HTMLElement {
   }
 
   renderItem(item) {
-    const el = document.createElement('div');
-    el.textContent = item.title;
-    this.appendChild(el);
+    const a = document.createElement('a');
+    a.textContent = item.title;
+    a.href = item.link;
+    a.target = '_blank';
+    a.classList.add('list-group-item');
+    a.classList.add('list-group-item-action');
+    return a;
   }
 
   renderItems() {
-    this.items.forEach(this.renderItem.bind(this));
+    const list = new ListGroup();
+    const links = this.items.map(this.renderItem.bind(this));
+    links.forEach(link => list.appendChild(link));
+    this.appendChild(list);
   }
 }
 
 customElements.define('x-item-list', ItemList);
+
+export default ItemList;

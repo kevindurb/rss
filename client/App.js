@@ -1,6 +1,8 @@
 import Container from './Container.js';
 import Api from './services/api.js';
 import ItemsService from './services/items.js';
+import FeedsService from './services/Feeds.js';
+import AppComponent from './components/App.js';
 
 class App {
   constructor() {
@@ -21,8 +23,13 @@ class App {
       )
     ));
 
-    const list = document.createElement('x-item-list');
-    this.rootEl.appendChild(list);
+    this.container.add('feedsService', (c) => (
+      new FeedsService(
+        c.get('api')
+      )
+    ));
+
+    this.rootEl.appendChild(new AppComponent());
   }
 }
 

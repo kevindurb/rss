@@ -6,7 +6,10 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 Api	client/services/api.js	/^class Api {$/;"	c
 App	client/App.js	/^class App {$/;"	c
+App	client/components/App.js	/^class App extends HTMLElement {$/;"	c
+Button	client/elements/Button.js	/^class Button extends HTMLButtonElement {$/;"	c
 Container	client/Container.js	/^class Container {$/;"	c
+FeedsService	client/services/Feeds.js	/^class FeedsService {$/;"	c
 Finder	handlers/refreshFeeds.js	/^const rssFinder = require('rss-finder');$/;"	c
 Gateway	handlers/createFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/getFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
@@ -15,6 +18,7 @@ Gateway	handlers/refreshFeeds.js	/^const feedsGateway = require('..\/gateways\/f
 Gateway	handlers/refreshFeeds.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 ItemList	client/components/ItemList.js	/^class ItemList extends HTMLElement {$/;"	c
 ItemsService	client/services/items.js	/^class ItemsService {$/;"	c
+ListGroup	client/elements/ListGroup.js	/^class ListGroup extends HTMLElement {$/;"	c
 MongoClient	gateways/database.js	/^const MongoClient = require('mongodb').MongoClient;$/;"	c
 Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
@@ -22,9 +26,13 @@ add	client/Container.js	/^  add(identifier, factory) {$/;"	f
 boot	client/App.js	/^  boot() {$/;"	f
 catch	gateways/items.js	/^      } catch (e) {$/;"	f
 catch	promisify.js	/^  } catch (e) {$/;"	f
+connectedCallback	client/components/App.js	/^  connectedCallback() {$/;"	f
 connectedCallback	client/components/ItemList.js	/^  connectedCallback() {$/;"	f
+connectedCallback	client/elements/Button.js	/^  connectedCallback() {$/;"	f
+connectedCallback	client/elements/ListGroup.js	/^  connectedCallback() {$/;"	f
 constructor	client/App.js	/^  constructor() {$/;"	f
 constructor	client/Container.js	/^  constructor() {$/;"	f
+constructor	client/components/App.js	/^  constructor() {$/;"	f
 constructor	client/components/ItemList.js	/^  constructor() {$/;"	f
 createFeed	gateways/feeds.js	/^  async createFeed(feedData) {$/;"	f
 executeRequest	client/services/api.js	/^  executeRequest(method, url, request = {}) {$/;"	f
@@ -42,12 +50,17 @@ getItems	gateways/items.js	/^  async getItems() {$/;"	f
 headers	client/services/api.js	/^      headers: {$/;"	o
 if	client/Container.js	/^      if (!this.factories[identifier]) {$/;"	f
 if	client/Container.js	/^    if (!this.instances[identifier]) {$/;"	f
+if	client/components/App.js	/^    if (this.isConnected) {$/;"	f
 if	client/components/ItemList.js	/^    if (this.isConnected) {$/;"	f
+if	client/elements/Button.js	/^    if (this.isConnected) {$/;"	f
+if	client/elements/ListGroup.js	/^    if (this.isConnected) {$/;"	f
 insertItems	gateways/items.js	/^  async insertItems(items) {$/;"	f
 instances	client/Container.js	/^    this.instances = {};$/;"	o
 json	client/services/api.js	/^  json(request) {$/;"	f
 loadItems	client/components/ItemList.js	/^  async loadItems() {$/;"	f
 post	client/services/api.js	/^  post(url, request = {}) {$/;"	f
+refreshFeeds	client/components/App.js	/^  async refreshFeeds() {$/;"	f
+refreshFeeds	client/services/Feeds.js	/^  refreshFeeds() {$/;"	f
 renderItem	client/components/ItemList.js	/^  renderItem(item) {$/;"	f
 renderItems	client/components/ItemList.js	/^  renderItems() {$/;"	f
 setup	gateways/database.js	/^  async setup(db) {$/;"	f
