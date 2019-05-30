@@ -12,12 +12,16 @@ Gateway	handlers/getFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds
 Gateway	handlers/getItems.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
+ItemList	client/components/ItemList.js	/^class ItemList extends HTMLElement {$/;"	c
+Items	client/services/items.js	/^export const getItems = () => {$/;"	c
 MongoClient	gateways/database.js	/^const MongoClient = require('mongodb').MongoClient;$/;"	c
 Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
 RssParser	index.js	/^const RssParser = require('rss-parser');$/;"	c
 catch	gateways/items.js	/^      } catch (e) {$/;"	f
 catch	promisify.js	/^  } catch (e) {$/;"	f
+connectedCallback	client/components/ItemList.js	/^  connectedCallback() {$/;"	f
+constructor	client/components/ItemList.js	/^  constructor() {$/;"	f
 createFeed	gateways/feeds.js	/^  async createFeed(feedData) {$/;"	f
 exports	gateways/database.js	/^module.exports = {$/;"	o
 exports	gateways/feeds.js	/^module.exports = {$/;"	o
@@ -26,5 +30,9 @@ for	gateways/items.js	/^    for (let item of items) {$/;"	f
 getConnection	gateways/database.js	/^  async getConnection() {$/;"	f
 getFeeds	gateways/feeds.js	/^  async getFeeds() {$/;"	f
 getItems	gateways/items.js	/^  async getItems() {$/;"	f
+if	client/components/ItemList.js	/^    if (this.isConnected) {$/;"	f
 insertItems	gateways/items.js	/^  async insertItems(items) {$/;"	f
+loadItems	client/components/ItemList.js	/^  async loadItems() {$/;"	f
+renderItem	client/components/ItemList.js	/^  renderItem(item) {$/;"	f
+renderItems	client/components/ItemList.js	/^  renderItems() {$/;"	f
 setup	gateways/database.js	/^  async setup(db) {$/;"	f

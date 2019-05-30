@@ -17,7 +17,8 @@ router.post('/feeds/refresh', promisify(
 ));
 
 router.get('/items', promisify(
-  require('./handlers/getItems')
+  require('./handlers/getItems'),
+  require('./serializers/item')
 ));
 
 module.exports = router;

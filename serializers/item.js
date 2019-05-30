@@ -1,3 +1,4 @@
-module.exports = (item) => ({
-  id: item._id,
+module.exports = ({ _id, ...item }) => ({
+  id: _id,
+  ...item
 });
