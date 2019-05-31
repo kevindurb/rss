@@ -5,7 +5,7 @@ const itemsGateway = require('../gateways/items');
 
 const rssParser = new RssParser();
 
-module.exports = async (request) => {
+module.exports = async () => {
   const feeds = await feedsGateway.getFeeds();
 
   const urls = await Promise.all(

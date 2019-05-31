@@ -8,12 +8,12 @@
 Api	client/services/api.js	/^class Api {$/;"	c
 App	client/App.js	/^class App {$/;"	c
 App	client/components/App.js	/^class App extends HTMLElement {$/;"	c
-Button	client/elements/Button.js	/^class Button extends HTMLButtonElement {$/;"	c
 Container	client/Container.js	/^class Container {$/;"	c
 Content	client/components/ItemList.js	/^    small.textContent = formatDate(item.publishedDate);$/;"	c
 Date	client/utils/date.js	/^export const formatDate = (input) => {$/;"	c
 EventEmitter	client/EventEmitter.js	/^class EventEmitter {$/;"	c
 FEEDS_REFRESHED	client/constants/events.js	/^export const FEEDS_REFRESHED = 'FEEDS_REFRESHED';$/;"	n
+FeedsHandler	scripts/refreshFeeds.js	/^const refreshFeedsHandler = require('..\/handlers\/refreshFeeds');$/;"	c
 FeedsService	client/services/Feeds.js	/^class FeedsService {$/;"	c
 Finder	handlers/refreshFeeds.js	/^const rssFinder = require('rss-finder');$/;"	c
 Gateway	handlers/createFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
@@ -37,7 +37,6 @@ catch	gateways/items.js	/^      } catch (e) {$/;"	f
 catch	promisify.js	/^  } catch (e) {$/;"	f
 connectedCallback	client/components/App.js	/^  connectedCallback() {$/;"	f
 connectedCallback	client/components/ItemList.js	/^  connectedCallback() {$/;"	f
-connectedCallback	client/elements/Button.js	/^  connectedCallback() {$/;"	f
 connectedCallback	client/elements/ListGroup.js	/^  connectedCallback() {$/;"	f
 constructor	client/App.js	/^  constructor() {$/;"	f
 constructor	client/Container.js	/^  constructor() {$/;"	f
@@ -65,7 +64,6 @@ if	client/EventEmitter.js	/^    if (!this.listeners[event]) {$/;"	f
 if	client/EventEmitter.js	/^    if (this.listeners[event]) {$/;"	f
 if	client/components/App.js	/^    if (this.isConnected) {$/;"	f
 if	client/components/ItemList.js	/^    if (this.isConnected) {$/;"	f
-if	client/elements/Button.js	/^    if (this.isConnected) {$/;"	f
 if	client/elements/ListGroup.js	/^    if (this.isConnected) {$/;"	f
 if	client/utils/date.js	/^  if (date > startOfDay) {$/;"	f
 insertItems	gateways/items.js	/^  async insertItems(items) {$/;"	f

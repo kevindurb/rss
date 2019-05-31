@@ -15,8 +15,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "nodemon",
-    "start:client": "live-server --proxy=/api:http://localhost:8080 ./client"
+    "start:dev": "nodemon",
+    "refresh-feeds": "node scripts/refreshFeeds.js"
   },
   "repository": {
     "type": "git",
