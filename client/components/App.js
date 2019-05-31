@@ -1,5 +1,4 @@
 import ItemList from './ItemList.js';
-import Button from '../elements/Button.js';
 
 class App extends HTMLElement {
   constructor() {
@@ -9,7 +8,9 @@ class App extends HTMLElement {
 
   connectedCallback() {
     if (this.isConnected) {
-      const refreshButton = new Button();
+      const refreshButton = document.createElement('button');
+      refreshButton.classList.add('btn');
+      refreshButton.classList.add('btn-primary');
       refreshButton.textContent = 'refresh';
       refreshButton.addEventListener('click', this.refreshFeeds.bind(this));
 
