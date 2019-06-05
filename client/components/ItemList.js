@@ -1,7 +1,7 @@
 import { makeListGroup } from '../elements/ListGroup.js';
 import { formatDate } from '../utils/date.js';
 import * as events from '../constants/events.js';
-import Element from '../utils/Element';
+import Element from '../utils/Element.js';
 
 class ItemList extends Element {
   init(container) {
