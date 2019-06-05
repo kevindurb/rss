@@ -16,6 +16,8 @@ export const makeButton = (props) => {
 
   if (primary) {
     button.classList.add('btn-primary');
+  } else {
+    button.classList.add('btn-secondary');
   }
 
   return button;

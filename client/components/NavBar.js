@@ -1,4 +1,5 @@
 import Element from '../utils/Element.js';
+import ManageFeedsModal from './ManageFeedsModal.js';
 import { makeButton } from '../elements/Button.js';
 import { makeContainer } from '../elements/Container.js';
 
@@ -14,6 +15,7 @@ class NavBar extends Element {
     this.classList.add('bg-light');
     this.classList.add('navbar-expand-lg');
 
+    const manageFeedsModal = new ManageFeedsModal();
     const container = makeContainer();
     const refreshButton = makeButton({
       primary: true,
@@ -22,6 +24,7 @@ class NavBar extends Element {
 
     this.listenTo('click', refreshButton, this.refreshFeeds);
 
+    container.appendChild(manageFeedsModal);
     container.appendChild(refreshButton);
     this.appendChild(container);
   }

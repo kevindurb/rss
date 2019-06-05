@@ -16,6 +16,7 @@ Date	client/utils/date.js	/^export const formatDate = (input) => {$/;"	c
 Element	client/utils/Element.js	/^class Element extends HTMLElement {$/;"	c
 EventEmitter	client/EventEmitter.js	/^class EventEmitter {$/;"	c
 FEEDS_REFRESHED	client/constants/events.js	/^export const FEEDS_REFRESHED = 'FEEDS_REFRESHED';$/;"	n
+FeedsButton	client/components/ManageFeedsModal.js	/^    const manageFeedsButton = makeButton({$/;"	c
 FeedsHandler	scripts/refreshFeeds.js	/^const refreshFeedsHandler = require('..\/handlers\/refreshFeeds');$/;"	c
 FeedsService	client/services/Feeds.js	/^class FeedsService {$/;"	c
 Finder	handlers/refreshFeeds.js	/^const rssFinder = require('rss-finder');$/;"	c
@@ -27,10 +28,14 @@ Gateway	handlers/refreshFeeds.js	/^const itemsGateway = require('..\/gateways\/i
 ItemList	client/components/ItemList.js	/^class ItemList extends Element {$/;"	c
 ItemsService	client/services/items.js	/^class ItemsService {$/;"	c
 ListGroup	client/elements/ListGroup.js	/^export const makeListGroup = () => {$/;"	c
+ManageFeedsModal	client/components/ManageFeedsModal.js	/^class ManageFeedsModal extends Element {$/;"	c
+Modal	client/elements/Modal.js	/^export const makeModal = (props) => {$/;"	c
+ModalAndButton	client/elements/Modal.js	/^export const linkModalAndButton = (modal, button) => {$/;"	c
 MongoClient	gateways/database.js	/^const MongoClient = require('mongodb').MongoClient;$/;"	c
 NavBar	client/components/NavBar.js	/^class NavBar extends Element {$/;"	c
 OfDay	client/utils/date.js	/^  const startOfDay = getStartOfDay();$/;"	c
 Props	client/elements/Button.js	/^const defaultProps = {$/;"	c
+Props	client/elements/Modal.js	/^const defaultProps = {$/;"	c
 Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
 StartOfDay	client/utils/date.js	/^export const getStartOfDay = () => {$/;"	c
@@ -66,8 +71,15 @@ if	client/EventEmitter.js	/^    if (!this.listeners[event]) {$/;"	f
 if	client/EventEmitter.js	/^    if (this.listeners[event]) {$/;"	f
 if	client/elements/Button.js	/^  if (primary) {$/;"	f
 if	client/utils/Element.js	/^    if (this.isConnected) {$/;"	f
+if	client/utils/createElement.js	/^  if (attributes.classList) {$/;"	f
+if	client/utils/createElement.js	/^  if (attributes.data) {$/;"	f
+if	client/utils/createElement.js	/^  if (attributes.id) {$/;"	f
+if	client/utils/createElement.js	/^  if (attributes.textContent) {$/;"	f
+if	client/utils/createElement.js	/^  if (typeof children === 'string') {$/;"	f
+if	client/utils/createElement.js	/^  if (typeof tagOrClass === 'string') {$/;"	f
 if	client/utils/date.js	/^  if (date > startOfDay) {$/;"	f
 init	client/components/ItemList.js	/^  init(container) {$/;"	f
+init	client/components/ManageFeedsModal.js	/^  init(container) {$/;"	f
 init	client/components/NavBar.js	/^  init(container) {$/;"	f
 init	client/utils/Element.js	/^  init() {}$/;"	f
 insertItems	gateways/items.js	/^  async insertItems(items) {$/;"	f
@@ -78,6 +90,7 @@ listeners	client/EventEmitter.js	/^    this.listeners = {};$/;"	o
 loadItems	client/components/ItemList.js	/^  async loadItems() {$/;"	f
 mount	client/components/App.js	/^  mount() {$/;"	f
 mount	client/components/ItemList.js	/^  mount() {$/;"	f
+mount	client/components/ManageFeedsModal.js	/^  mount() {$/;"	f
 mount	client/components/NavBar.js	/^  mount() {$/;"	f
 mount	client/utils/Element.js	/^  mount() {}$/;"	f
 post	client/services/api.js	/^  post(url, request = {}) {$/;"	f
