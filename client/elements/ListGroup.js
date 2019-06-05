@@ -1,11 +1,5 @@
-class ListGroup extends HTMLElement {
-  connectedCallback() {
-    if (this.isConnected) {
-      this.classList.add('list-group');
-    }
-  }
+export const makeListGroup = () => {
+  const div = document.createElement('div');
+  div.classList.add('ListGroup');
+  return div;
 }
-
-customElements.define('x-list-group', ListGroup);
-
-export default ListGroup;

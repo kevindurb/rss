@@ -1,26 +1,18 @@
 import ItemList from './ItemList.js';
+import NavBar from './NavBar.js';
+import { makeContainer } from '../elements/Container.js';
+import Element from '../utils/Element.js';
 
-class App extends HTMLElement {
-  constructor() {
-    super();
-    this.feedsService = window.container.get('feedsService');
-  }
+class App extends Element {
+  mount() {
+    const container = makeContainer();
+    const itemList = new ItemList();
+    const navBar = new NavBar();
 
-  connectedCallback() {
-    if (this.isConnected) {
-      const refreshButton = document.createElement('button');
-      refreshButton.classList.add('btn');
-      refreshButton.classList.add('btn-primary');
-      refreshButton.textContent = 'refresh';
-      refreshButton.addEventListener('click', this.refreshFeeds.bind(this));
+    container.appendChild(itemList);
 
-      this.appendChild(refreshButton);
-      this.appendChild(new ItemList());
-    }
-  }
-
-  async refreshFeeds() {
-    await this.feedsService.refreshFeeds();
+    this.appendChild(new NavBar());
+    this.appendChild(container);
   }
 }
 

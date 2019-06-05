@@ -4,13 +4,16 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-.list-group-item img 	client/styles.css	/^.list-group-item img {$/;"	c
 Api	client/services/api.js	/^class Api {$/;"	c
 App	client/App.js	/^class App {$/;"	c
-App	client/components/App.js	/^class App extends HTMLElement {$/;"	c
+App	client/components/App.js	/^class App extends Element {$/;"	c
+Button	client/components/NavBar.js	/^    const refreshButton = makeButton({$/;"	c
+Button	client/elements/Button.js	/^export const makeButton = (props) => {$/;"	c
 Container	client/Container.js	/^class Container {$/;"	c
+Container	client/elements/Container.js	/^export const makeContainer = () => {$/;"	c
 Content	client/components/ItemList.js	/^    small.textContent = formatDate(item.publishedDate);$/;"	c
 Date	client/utils/date.js	/^export const formatDate = (input) => {$/;"	c
+Element	client/utils/Element.js	/^class Element extends HTMLElement {$/;"	c
 EventEmitter	client/EventEmitter.js	/^class EventEmitter {$/;"	c
 FEEDS_REFRESHED	client/constants/events.js	/^export const FEEDS_REFRESHED = 'FEEDS_REFRESHED';$/;"	n
 FeedsHandler	scripts/refreshFeeds.js	/^const refreshFeedsHandler = require('..\/handlers\/refreshFeeds');$/;"	c
@@ -21,11 +24,13 @@ Gateway	handlers/getFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds
 Gateway	handlers/getItems.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
-ItemList	client/components/ItemList.js	/^class ItemList extends HTMLElement {$/;"	c
+ItemList	client/components/ItemList.js	/^class ItemList extends Element {$/;"	c
 ItemsService	client/services/items.js	/^class ItemsService {$/;"	c
-ListGroup	client/elements/ListGroup.js	/^class ListGroup extends HTMLElement {$/;"	c
+ListGroup	client/elements/ListGroup.js	/^export const makeListGroup = () => {$/;"	c
 MongoClient	gateways/database.js	/^const MongoClient = require('mongodb').MongoClient;$/;"	c
+NavBar	client/components/NavBar.js	/^class NavBar extends Element {$/;"	c
 OfDay	client/utils/date.js	/^  const startOfDay = getStartOfDay();$/;"	c
+Props	client/elements/Button.js	/^const defaultProps = {$/;"	c
 Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
 StartOfDay	client/utils/date.js	/^export const getStartOfDay = () => {$/;"	c
@@ -35,14 +40,11 @@ boot	client/App.js	/^  boot() {$/;"	f
 catch	client/services/api.js	/^    } catch (e) {$/;"	f
 catch	gateways/items.js	/^      } catch (e) {$/;"	f
 catch	promisify.js	/^  } catch (e) {$/;"	f
-connectedCallback	client/components/App.js	/^  connectedCallback() {$/;"	f
-connectedCallback	client/components/ItemList.js	/^  connectedCallback() {$/;"	f
-connectedCallback	client/elements/ListGroup.js	/^  connectedCallback() {$/;"	f
+connectedCallback	client/utils/Element.js	/^  connectedCallback() {$/;"	f
 constructor	client/App.js	/^  constructor() {$/;"	f
 constructor	client/Container.js	/^  constructor() {$/;"	f
 constructor	client/EventEmitter.js	/^  constructor() {$/;"	f
-constructor	client/components/App.js	/^  constructor() {$/;"	f
-constructor	client/components/ItemList.js	/^  constructor() {$/;"	f
+constructor	client/utils/Element.js	/^  constructor() {$/;"	f
 createFeed	gateways/feeds.js	/^  async createFeed(feedData) {$/;"	f
 emit	client/EventEmitter.js	/^  emit(event, ...args) {$/;"	f
 executeRequest	client/services/api.js	/^  executeRequest(method, url, request = {}) {$/;"	f
@@ -62,17 +64,24 @@ if	client/Container.js	/^      if (!this.factories[identifier]) {$/;"	f
 if	client/Container.js	/^    if (!this.instances[identifier]) {$/;"	f
 if	client/EventEmitter.js	/^    if (!this.listeners[event]) {$/;"	f
 if	client/EventEmitter.js	/^    if (this.listeners[event]) {$/;"	f
-if	client/components/App.js	/^    if (this.isConnected) {$/;"	f
-if	client/components/ItemList.js	/^    if (this.isConnected) {$/;"	f
-if	client/elements/ListGroup.js	/^    if (this.isConnected) {$/;"	f
+if	client/elements/Button.js	/^  if (primary) {$/;"	f
+if	client/utils/Element.js	/^    if (this.isConnected) {$/;"	f
 if	client/utils/date.js	/^  if (date > startOfDay) {$/;"	f
+init	client/components/ItemList.js	/^  init(container) {$/;"	f
+init	client/components/NavBar.js	/^  init(container) {$/;"	f
+init	client/utils/Element.js	/^  init() {}$/;"	f
 insertItems	gateways/items.js	/^  async insertItems(items) {$/;"	f
 instances	client/Container.js	/^    this.instances = {};$/;"	o
 json	client/services/api.js	/^  async json(request) {$/;"	f
+listenTo	client/utils/Element.js	/^  listenTo(event, element, callback) {$/;"	f
 listeners	client/EventEmitter.js	/^    this.listeners = {};$/;"	o
 loadItems	client/components/ItemList.js	/^  async loadItems() {$/;"	f
+mount	client/components/App.js	/^  mount() {$/;"	f
+mount	client/components/ItemList.js	/^  mount() {$/;"	f
+mount	client/components/NavBar.js	/^  mount() {$/;"	f
+mount	client/utils/Element.js	/^  mount() {}$/;"	f
 post	client/services/api.js	/^  post(url, request = {}) {$/;"	f
-refreshFeeds	client/components/App.js	/^  async refreshFeeds() {$/;"	f
+refreshFeeds	client/components/NavBar.js	/^  async refreshFeeds() {$/;"	f
 refreshFeeds	client/services/Feeds.js	/^  async refreshFeeds() {$/;"	f
 renderItem	client/components/ItemList.js	/^  renderItem(item) {$/;"	f
 renderItems	client/components/ItemList.js	/^  renderItems() {$/;"	f
