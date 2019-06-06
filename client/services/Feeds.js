@@ -13,6 +13,23 @@ class FeedsService {
     await this.api.post('/api/feeds/refresh');
     this.eventEmitter.emit(events.FEEDS_REFRESHED);
   }
+
+  getAllFeeds() {
+    return this.api.get('/api/feeds');
+  }
+
+  async addFeed(url) {
+    await this.api.post('/api/feeds', {
+      body: {
+        url,
+      },
+    });
+    this.refreshFeeds();
+  }
+
+  deleteFeed(id) {
+    return this.api.delete(`/api/feeds/${id}`);
+  }
 }
 
 export default FeedsService;

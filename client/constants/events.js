@@ -1,1 +1,2 @@
 export const FEEDS_REFRESHED = 'FEEDS_REFRESHED';
+export const FEED_ADDED = 'FEED_ADDED';

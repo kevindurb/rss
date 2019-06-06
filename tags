@@ -4,9 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+.list-group-item img 	client/styles.css	/^.list-group-item img {$/;"	c
 Api	client/services/api.js	/^class Api {$/;"	c
 App	client/App.js	/^class App {$/;"	c
 App	client/components/App.js	/^class App extends Element {$/;"	c
+Button	client/components/ManageFeedsModal.js	/^    const deleteButton = makeButton({$/;"	c
 Button	client/components/NavBar.js	/^    const refreshButton = makeButton({$/;"	c
 Button	client/elements/Button.js	/^export const makeButton = (props) => {$/;"	c
 Container	client/Container.js	/^class Container {$/;"	c
@@ -16,11 +18,13 @@ Date	client/utils/date.js	/^export const formatDate = (input) => {$/;"	c
 Element	client/utils/Element.js	/^class Element extends HTMLElement {$/;"	c
 EventEmitter	client/EventEmitter.js	/^class EventEmitter {$/;"	c
 FEEDS_REFRESHED	client/constants/events.js	/^export const FEEDS_REFRESHED = 'FEEDS_REFRESHED';$/;"	n
+FEED_ADDED	client/constants/events.js	/^export const FEED_ADDED = 'FEED_ADDED';$/;"	n
 FeedsButton	client/components/ManageFeedsModal.js	/^    const manageFeedsButton = makeButton({$/;"	c
 FeedsHandler	scripts/refreshFeeds.js	/^const refreshFeedsHandler = require('..\/handlers\/refreshFeeds');$/;"	c
 FeedsService	client/services/Feeds.js	/^class FeedsService {$/;"	c
 Finder	handlers/refreshFeeds.js	/^const rssFinder = require('rss-finder');$/;"	c
 Gateway	handlers/createFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
+Gateway	handlers/deleteFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/getFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/getItems.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
@@ -41,6 +45,9 @@ RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;
 StartOfDay	client/utils/date.js	/^export const getStartOfDay = () => {$/;"	c
 add	client/Container.js	/^  add(identifier, factory) {$/;"	f
 addEventListener	client/EventEmitter.js	/^  addEventListener(event, callback) {$/;"	f
+addFeed	client/components/ManageFeedsModal.js	/^  async addFeed() {$/;"	f
+addFeed	client/services/Feeds.js	/^  async addFeed(url) {$/;"	f
+body	client/services/Feeds.js	/^      body: {$/;"	o
 boot	client/App.js	/^  boot() {$/;"	f
 catch	client/services/api.js	/^    } catch (e) {$/;"	f
 catch	gateways/items.js	/^      } catch (e) {$/;"	f
@@ -51,6 +58,10 @@ constructor	client/Container.js	/^  constructor() {$/;"	f
 constructor	client/EventEmitter.js	/^  constructor() {$/;"	f
 constructor	client/utils/Element.js	/^  constructor() {$/;"	f
 createFeed	gateways/feeds.js	/^  async createFeed(feedData) {$/;"	f
+delete	client/services/api.js	/^  delete(url, request = {}) {$/;"	f
+deleteFeed	client/components/ManageFeedsModal.js	/^  deleteFeed(id) {$/;"	f
+deleteFeed	client/services/Feeds.js	/^  deleteFeed(id) {$/;"	f
+deleteFeed	gateways/feeds.js	/^  async deleteFeed(id) {$/;"	f
 emit	client/EventEmitter.js	/^  emit(event, ...args) {$/;"	f
 executeRequest	client/services/api.js	/^  executeRequest(method, url, request = {}) {$/;"	f
 exports	gateways/database.js	/^module.exports = {$/;"	o
@@ -60,6 +71,7 @@ factories	client/Container.js	/^    this.factories = {};$/;"	o
 for	gateways/items.js	/^    for (let item of items) {$/;"	f
 get	client/Container.js	/^  get(identifier) {$/;"	f
 get	client/services/api.js	/^  get(url, request = {}) {$/;"	f
+getAllFeeds	client/services/Feeds.js	/^  getAllFeeds() {$/;"	f
 getAllItems	client/services/items.js	/^  getAllItems() {$/;"	f
 getConnection	gateways/database.js	/^  async getConnection() {$/;"	f
 getFeeds	gateways/feeds.js	/^  async getFeeds() {$/;"	f
@@ -87,6 +99,7 @@ instances	client/Container.js	/^    this.instances = {};$/;"	o
 json	client/services/api.js	/^  async json(request) {$/;"	f
 listenTo	client/utils/Element.js	/^  listenTo(event, element, callback) {$/;"	f
 listeners	client/EventEmitter.js	/^    this.listeners = {};$/;"	o
+loadFeeds	client/components/ManageFeedsModal.js	/^  loadFeeds() {$/;"	f
 loadItems	client/components/ItemList.js	/^  async loadItems() {$/;"	f
 mount	client/components/App.js	/^  mount() {$/;"	f
 mount	client/components/ItemList.js	/^  mount() {$/;"	f
@@ -96,6 +109,9 @@ mount	client/utils/Element.js	/^  mount() {}$/;"	f
 post	client/services/api.js	/^  post(url, request = {}) {$/;"	f
 refreshFeeds	client/components/NavBar.js	/^  async refreshFeeds() {$/;"	f
 refreshFeeds	client/services/Feeds.js	/^  async refreshFeeds() {$/;"	f
+renderAddFeed	client/components/ManageFeedsModal.js	/^  renderAddFeed() {$/;"	f
+renderFeed	client/components/ManageFeedsModal.js	/^  renderFeed(feed) {$/;"	f
+renderFeeds	client/components/ManageFeedsModal.js	/^  renderFeeds(feeds) {$/;"	f
 renderItem	client/components/ItemList.js	/^  renderItem(item) {$/;"	f
 renderItems	client/components/ItemList.js	/^  renderItems() {$/;"	f
 setup	gateways/database.js	/^  async setup(db) {$/;"	f

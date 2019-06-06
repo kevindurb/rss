@@ -21,4 +21,8 @@ router.get('/items', promisify(
   require('./serializers/item')
 ));
 
+router.delete('/feeds/:id', promisify(
+  require('./handlers/deleteFeed')
+));
+
 module.exports = router;

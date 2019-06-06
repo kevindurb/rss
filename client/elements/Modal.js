@@ -1,5 +1,3 @@
-import h from '../utils/createElement.js';
-
 const defaultProps = {
   id: '',
   headerText: '',
@@ -11,15 +9,26 @@ export const makeModal = (props) => {
     headerText,
   } = { ...defaultProps, ...props };
 
-  return h('div', { classList: ['modal'], id }, [
-    h('div', { classList: ['modal-dialog'] }, [
-      h('div', { classList: ['modal-content'] }, [
-        h('div', { classList: ['modal-header'] }, [
-          h('h5', { classList: ['modal-title'] }, headerText),
-        ]),
-      ]),
-    ]),
-  ]);
+  const modal = document.createElement('div');
+
+  modal.classList.add('modal');
+  modal.setAttribute('id', id);
+
+  modal.innerHTML = `
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  `;
+
+  modal.querySelector('.modal-title').textContent = headerText;
+
+  return modal;
 };
 
 export const linkModalAndButton = (modal, button) => {

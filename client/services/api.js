@@ -7,7 +7,8 @@ class Api {
         ...request.headers,
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-      }
+      },
+      body: request.body ? JSON.stringify(request.body) : null,
     }).then(this.json);
   }
 
@@ -17,6 +18,10 @@ class Api {
 
   post(url, request = {}) {
     return this.executeRequest('POST', url, request);
+  }
+
+  delete(url, request = {}) {
+    return this.executeRequest('DELETE', url, request);
   }
 
   async json(request) {

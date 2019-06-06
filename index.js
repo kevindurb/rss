@@ -1,9 +1,12 @@
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
+const morgan = require('morgan');
 
 const port = process.env.PORT || 8080;
 const app = express();
+
+app.use(morgan('combined'));
 
 app.use(require('body-parser').json());
 
