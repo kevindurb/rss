@@ -19,6 +19,8 @@ module.exports = async () => {
     )),
   );
 
+  const now = new Date();
+
   const items = feedDatas
     .filter(x => x)
     .reduce((acc, feed) => {
@@ -30,11 +32,12 @@ module.exports = async () => {
     .map(item => ({
       guid: item.id || item.guid || item.link,
       link: item.link,
-      publishedDate: new Date(item.pubDate),
+      publishedDate: new Date(item.pubDate || now),
       author: item.author || item.creator,
       content: item.content,
       title: item.title,
     }));
+
 
   await itemsGateway.insertItems(items);
 };

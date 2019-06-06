@@ -7,9 +7,14 @@ module.exports = {
 
     for (let item of items) {
       try {
+        const {
+          publishedDate,
+          ...restItem
+        } = item;
+
         await collection.updateOne(
           { guid: item.guid },
-          { $set: item },
+          { $set: restItem, $setOnInsert: { publishedDate } },
           { upsert: true },
         );
       } catch (e) {
