@@ -5,7 +5,6 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 $setOnInsert	gateways/items.js	/^          { $set: restItem, $setOnInsert: { publishedDate } },$/;"	o
-.list-group-item img 	client/styles.css	/^.list-group-item img {$/;"	c
 Api	client/services/api.js	/^class Api {$/;"	c
 App	client/App.js	/^class App {$/;"	c
 App	client/components/App.js	/^class App extends Element {$/;"	c
@@ -17,6 +16,7 @@ Container	client/elements/Container.js	/^export const makeContainer = () => {$/;
 Content	client/components/ItemList.js	/^    small.textContent = formatDate(item.publishedDate);$/;"	c
 Date	client/utils/date.js	/^export const formatDate = (input) => {$/;"	c
 Element	client/utils/Element.js	/^class Element extends HTMLElement {$/;"	c
+ElementBuilder	client/utils/fluent.js	/^class ElementBuilder {$/;"	c
 EventEmitter	client/EventEmitter.js	/^class EventEmitter {$/;"	c
 FEEDS_REFRESHED	client/constants/events.js	/^export const FEEDS_REFRESHED = 'FEEDS_REFRESHED';$/;"	n
 FEED_ADDED	client/constants/events.js	/^export const FEED_ADDED = 'FEED_ADDED';$/;"	n
@@ -49,17 +49,25 @@ add	client/Container.js	/^  add(identifier, factory) {$/;"	f
 addEventListener	client/EventEmitter.js	/^  addEventListener(event, callback) {$/;"	f
 addFeed	client/components/ManageFeedsModal.js	/^  async addFeed() {$/;"	f
 addFeed	client/services/Feeds.js	/^  async addFeed(url) {$/;"	f
+appendTo	client/utils/fluent.js	/^  appendTo(parent) {$/;"	f
+attr	client/utils/fluent.js	/^  attr(key, value) {$/;"	f
 body	client/services/Feeds.js	/^      body: {$/;"	o
 boot	client/App.js	/^  boot() {$/;"	f
 catch	client/services/api.js	/^    } catch (e) {$/;"	f
 catch	gateways/items.js	/^      } catch (e) {$/;"	f
 catch	promisify.js	/^  } catch (e) {$/;"	f
+child	client/utils/fluent.js	/^  child(childOrText) {$/;"	f
+children	client/utils/fluent.js	/^  children(children) {$/;"	f
+class	client/utils/fluent.js	/^  class(className) {$/;"	f
+classes	client/utils/fluent.js	/^  classes(classes) {$/;"	f
 connectedCallback	client/utils/Element.js	/^  connectedCallback() {$/;"	f
 constructor	client/App.js	/^  constructor() {$/;"	f
 constructor	client/Container.js	/^  constructor() {$/;"	f
 constructor	client/EventEmitter.js	/^  constructor() {$/;"	f
 constructor	client/utils/Element.js	/^  constructor() {$/;"	f
+constructor	client/utils/fluent.js	/^  constructor(tagOrClass = 'div') {$/;"	f
 createFeed	gateways/feeds.js	/^  async createFeed(feedData) {$/;"	f
+data	client/utils/fluent.js	/^  data(key, value) {$/;"	f
 delete	client/services/api.js	/^  delete(url, request = {}) {$/;"	f
 deleteFeed	client/components/ManageFeedsModal.js	/^  deleteFeed(id) {$/;"	f
 deleteFeed	client/services/Feeds.js	/^  deleteFeed(id) {$/;"	f
@@ -76,9 +84,11 @@ get	client/services/api.js	/^  get(url, request = {}) {$/;"	f
 getAllFeeds	client/services/Feeds.js	/^  getAllFeeds() {$/;"	f
 getAllItems	client/services/items.js	/^  getAllItems() {$/;"	f
 getConnection	gateways/database.js	/^  async getConnection() {$/;"	f
+getElement	client/utils/fluent.js	/^  getElement() {$/;"	f
 getFeeds	gateways/feeds.js	/^  async getFeeds() {$/;"	f
 getItems	gateways/items.js	/^  async getItems() {$/;"	f
 headers	client/services/api.js	/^      headers: {$/;"	o
+id	client/utils/fluent.js	/^  id(id) {$/;"	f
 if	client/Container.js	/^      if (!this.factories[identifier]) {$/;"	f
 if	client/Container.js	/^    if (!this.instances[identifier]) {$/;"	f
 if	client/EventEmitter.js	/^    if (!this.listeners[event]) {$/;"	f
@@ -92,6 +102,9 @@ if	client/utils/createElement.js	/^  if (attributes.textContent) {$/;"	f
 if	client/utils/createElement.js	/^  if (typeof children === 'string') {$/;"	f
 if	client/utils/createElement.js	/^  if (typeof tagOrClass === 'string') {$/;"	f
 if	client/utils/date.js	/^  if (date > startOfDay) {$/;"	f
+if	client/utils/fluent.js	/^    if (child instanceof ElementBuilder) {$/;"	f
+if	client/utils/fluent.js	/^    if (typeof child === 'string') {$/;"	f
+if	client/utils/fluent.js	/^    if (typeof tagOrClass === 'string') {$/;"	f
 init	client/components/ItemList.js	/^  init(container) {$/;"	f
 init	client/components/ManageFeedsModal.js	/^  init(container) {$/;"	f
 init	client/components/NavBar.js	/^  init(container) {$/;"	f

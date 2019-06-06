@@ -1,3 +1,5 @@
+import { build } from '../utils/fluent.js';
+
 const defaultProps = {
   id: '',
   headerText: '',
@@ -9,26 +11,31 @@ export const makeModal = (props) => {
     headerText,
   } = { ...defaultProps, ...props };
 
-  const modal = document.createElement('div');
-
-  modal.classList.add('modal');
-  modal.setAttribute('id', id);
-
-  modal.innerHTML = `
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title"></h5>
-        </div>
-        <div class="modal-body">
-        </div>
-      </div>
-    </div>
-  `;
-
-  modal.querySelector('.modal-title').textContent = headerText;
-
-  return modal;
+  return (
+    build('div')
+    .class('modal')
+    .id(id)
+    .child(
+      build('div')
+      .class('modal-dialog')
+      .child(
+        build('div')
+        .class('modal-content')
+        .children([
+          build('div')
+          .class('modal-header')
+          .child(
+            build('h5')
+            .class('modal-title')
+            .child(headerText)
+          ),
+          build('div')
+          .class('modal-body')
+        ])
+      )
+    )
+    .getElement()
+  );
 };
 
 export const linkModalAndButton = (modal, button) => {
