@@ -13,7 +13,6 @@ Button	client/components/NavBar.js	/^    const refreshButton = makeButton({$/;"	
 Button	client/elements/Button.js	/^export const makeButton = (props) => {$/;"	c
 Container	client/Container.js	/^class Container {$/;"	c
 Container	client/elements/Container.js	/^export const makeContainer = () => {$/;"	c
-Content	client/components/ItemList.js	/^    small.textContent = formatDate(item.publishedDate);$/;"	c
 Date	client/utils/date.js	/^export const formatDate = (input) => {$/;"	c
 Element	client/utils/Element.js	/^class Element extends HTMLElement {$/;"	c
 ElementBuilder	client/utils/fluent.js	/^class ElementBuilder {$/;"	c

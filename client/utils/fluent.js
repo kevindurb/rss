@@ -52,6 +52,11 @@ class ElementBuilder {
     return this;
   }
 
+  innerHTML(html) {
+    this.element.innerHTML = html;
+    return this;
+  }
+
   getElement() {
     return this.element;
   }
