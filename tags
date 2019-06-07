@@ -86,7 +86,7 @@ getAllItems	client/services/items.js	/^  getAllItems() {$/;"	f
 getConnection	gateways/database.js	/^  async getConnection() {$/;"	f
 getElement	client/utils/fluent.js	/^  getElement() {$/;"	f
 getFeeds	gateways/feeds.js	/^  async getFeeds() {$/;"	f
-getItems	gateways/items.js	/^  async getItems() {$/;"	f
+getItems	gateways/items.js	/^  async getItems(limit = 100, offset = 0) {$/;"	f
 headers	client/services/api.js	/^      headers: {$/;"	o
 id	client/utils/fluent.js	/^  id(id) {$/;"	f
 if	client/Container.js	/^      if (!this.factories[identifier]) {$/;"	f

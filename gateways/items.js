@@ -22,11 +22,13 @@ module.exports = {
       }
     }
   },
-  async getItems() {
+  async getItems(limit = 100, offset = 0) {
     const db = await database.getConnection();
     return await db.collection('items')
       .find({})
       .sort({ publishedDate: -1 })
+      .skip(offset)
+      .limit(limit)
       .toArray();
   }
 };
