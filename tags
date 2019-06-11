@@ -43,6 +43,7 @@ Props	client/elements/Button.js	/^const defaultProps = {$/;"	c
 Props	client/elements/Modal.js	/^const defaultProps = {$/;"	c
 Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
+ScrollHelper	client/utils/ScrollHelper.js	/^class ScrollHelper extends EventEmitter {$/;"	c
 StartOfDay	client/utils/date.js	/^export const getStartOfDay = () => {$/;"	c
 add	client/Container.js	/^  add(identifier, factory) {$/;"	f
 addEventListener	client/EventEmitter.js	/^  addEventListener(event, callback) {$/;"	f
@@ -64,6 +65,7 @@ constructor	client/App.js	/^  constructor() {$/;"	f
 constructor	client/Container.js	/^  constructor() {$/;"	f
 constructor	client/EventEmitter.js	/^  constructor() {$/;"	f
 constructor	client/utils/Element.js	/^  constructor() {$/;"	f
+constructor	client/utils/ScrollHelper.js	/^  constructor($el) {$/;"	f
 constructor	client/utils/fluent.js	/^  constructor(tagOrClass = 'div') {$/;"	f
 createFeed	gateways/feeds.js	/^  async createFeed(feedData) {$/;"	f
 data	client/utils/fluent.js	/^  data(key, value) {$/;"	f
@@ -108,6 +110,7 @@ init	client/components/ItemList.js	/^  init(container) {$/;"	f
 init	client/components/ManageFeedsModal.js	/^  init(container) {$/;"	f
 init	client/components/NavBar.js	/^  init(container) {$/;"	f
 init	client/utils/Element.js	/^  init() {}$/;"	f
+innerHTML	client/utils/fluent.js	/^  innerHTML(html) {$/;"	f
 insertItems	gateways/items.js	/^  async insertItems(items) {$/;"	f
 instances	client/Container.js	/^    this.instances = {};$/;"	o
 json	client/services/api.js	/^  async json(request) {$/;"	f

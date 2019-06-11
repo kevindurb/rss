@@ -24,6 +24,7 @@ class ItemList extends Element {
   renderItem(item) {
     return (
       build('a')
+      .attr('target', '_blank')
       .attr('href', item.link)
       .classes(['list-group-item', 'list-group-item-action'])
       .children([
