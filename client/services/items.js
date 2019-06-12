@@ -10,6 +10,10 @@ class ItemsService {
   getAllItems() {
     return this.api.get('/api/items');
   }
+
+  markRead(id) {
+    return this.api.post(`/api/items/${encodeURIComponent(id)}/mark_read`);
+  }
 }
 
 export default ItemsService;

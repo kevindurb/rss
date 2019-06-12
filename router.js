@@ -25,4 +25,8 @@ router.delete('/feeds/:id', promisify(
   require('./handlers/deleteFeed')
 ));
 
+router.post('/items/:id/mark_read', promisify(
+  require('./handlers/markRead')
+));
+
 module.exports = router;

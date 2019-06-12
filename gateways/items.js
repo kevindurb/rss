@@ -25,10 +25,18 @@ module.exports = {
   async getItems(limit = 100, offset = 0) {
     const db = await database.getConnection();
     return await db.collection('items')
-      .find({})
+      .find({ read: { $ne: true } })
       .sort({ publishedDate: -1 })
       .skip(offset)
       .limit(limit)
       .toArray();
+  },
+  async markRead(id) {
+    const db = await database.getConnection();
+    const collection = db.collection('items');
+    await collection.updateOne(
+      { guid: id },
+      { $set: { read: true } },
+    );
   }
 };

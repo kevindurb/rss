@@ -4,6 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+$set	gateways/items.js	/^      { $set: { read: true } },$/;"	o
 $setOnInsert	gateways/items.js	/^          { $set: restItem, $setOnInsert: { publishedDate } },$/;"	o
 Api	client/services/api.js	/^class Api {$/;"	c
 App	client/App.js	/^class App {$/;"	c
@@ -27,6 +28,7 @@ Gateway	handlers/createFeed.js	/^const feedsGateway = require('..\/gateways\/fee
 Gateway	handlers/deleteFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/getFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/getItems.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
+Gateway	handlers/markRead.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 ItemList	client/components/ItemList.js	/^class ItemList extends Element {$/;"	c
@@ -118,12 +120,15 @@ listenTo	client/utils/Element.js	/^  listenTo(event, element, callback) {$/;"	f
 listeners	client/EventEmitter.js	/^    this.listeners = {};$/;"	o
 loadFeeds	client/components/ManageFeedsModal.js	/^  loadFeeds() {$/;"	f
 loadItems	client/components/ItemList.js	/^  async loadItems() {$/;"	f
+markRead	client/services/items.js	/^  markRead(id) {$/;"	f
+markRead	gateways/items.js	/^  async markRead(id) {$/;"	f
 mount	client/components/App.js	/^  mount() {$/;"	f
 mount	client/components/ItemList.js	/^  mount() {$/;"	f
 mount	client/components/ManageFeedsModal.js	/^  mount() {$/;"	f
 mount	client/components/NavBar.js	/^  mount() {$/;"	f
 mount	client/utils/Element.js	/^  mount() {}$/;"	f
 post	client/services/api.js	/^  post(url, request = {}) {$/;"	f
+read	gateways/items.js	/^      .find({ read: { $ne: true } })$/;"	o
 refreshFeeds	client/components/NavBar.js	/^  async refreshFeeds() {$/;"	f
 refreshFeeds	client/services/Feeds.js	/^  async refreshFeeds() {$/;"	f
 renderAddFeed	client/components/ManageFeedsModal.js	/^  renderAddFeed() {$/;"	f
@@ -132,3 +137,4 @@ renderFeeds	client/components/ManageFeedsModal.js	/^  renderFeeds(feeds) {$/;"	f
 renderItem	client/components/ItemList.js	/^  renderItem(item) {$/;"	f
 renderItems	client/components/ItemList.js	/^  renderItems() {$/;"	f
 setup	gateways/database.js	/^  async setup(db) {$/;"	f
+updateRead	client/components/ItemList.js	/^  updateRead() {$/;"	f

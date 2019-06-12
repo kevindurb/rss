@@ -9,21 +9,41 @@ class ItemList extends Element {
     this.items = [];
     this.itemService = container.get('itemsService');
     this.eventEmitter = container.get('eventEmitter');
+    this.loadItems = this.loadItems.bind(this);
+    this.updateRead = this.updateRead.bind(this);
   }
 
   mount() {
     this.loadItems();
-    this.eventEmitter.addEventListener(events.FEEDS_REFRESHED, this.loadItems.bind(this));
+    this.listenTo(events.FEEDS_REFRESHED, this.eventEmitter, this.loadItems)
+    this.listenTo('scroll', document, this.updateRead);
+  }
+
+  updateRead() {
+    const bottom = window.innerHeight;
+    const anchors = Array.from(this.querySelectorAll('a.list-group-item'));
+    const unreadAnchorsAboveBottom = anchors.filter((anchor) => {
+      const rect = anchor.getBoundingClientRect();
+      return rect.bottom < bottom && anchor.dataset.read === 'false';
+    });
+
+    unreadAnchorsAboveBottom.forEach((anchor) => {
+      this.itemService.markRead(anchor.dataset.id);
+      anchor.dataset.read = true;
+    });
   }
 
   async loadItems() {
     this.items = await this.itemService.getAllItems();
     this.renderItems();
+    this.updateRead();
   }
 
   renderItem(item) {
     return (
       build('a')
+      .data('id', item.guid)
+      .data('read', item.read || false)
       .attr('target', '_blank')
       .attr('href', item.link)
       .classes(['list-group-item', 'list-group-item-action'])
