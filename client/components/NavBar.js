@@ -42,8 +42,10 @@ class NavBar extends Element {
 
   async refreshFeeds() {
     this.$refreshButton.setAttribute('disabled', true);
+    this.$refreshButton.querySelector('i').classList.add('fa-spin');
     await this.feedsService.refreshFeeds();
     this.$refreshButton.removeAttribute('disabled');
+    this.$refreshButton.querySelector('i').classList.remove('fa-spin');
   }
 
   scrollToTop() {
