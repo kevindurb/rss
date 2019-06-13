@@ -130,7 +130,7 @@ mount	client/components/ManageFeedsModal.js	/^  mount() {$/;"	f
 mount	client/components/NavBar.js	/^  mount() {$/;"	f
 mount	client/utils/Element.js	/^  mount() {}$/;"	f
 post	client/services/api.js	/^  post(url, request = {}) {$/;"	f
-read	gateways/items.js	/^      .find(\/*{ read: { $ne: true } }*\/{})$/;"	o
+read	gateways/items.js	/^      .find({ read: { $ne: true } })$/;"	o
 refreshFeeds	client/components/NavBar.js	/^  async refreshFeeds() {$/;"	f
 refreshFeeds	client/services/Feeds.js	/^  async refreshFeeds() {$/;"	f
 renderAddFeed	client/components/ManageFeedsModal.js	/^  renderAddFeed() {$/;"	f
