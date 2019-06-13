@@ -1,5 +1,4 @@
 const RssParser = require('rss-parser');
-const rssFinder = require('rss-finder');
 const feedsGateway = require('../gateways/feeds');
 const itemsGateway = require('../gateways/items');
 
@@ -8,13 +7,9 @@ const rssParser = new RssParser();
 module.exports = async () => {
   const feeds = await feedsGateway.getFeeds();
 
-  const urls = await Promise.all(
-    feeds.map((feed) => rssFinder(feed.url)),
-  );
-
   const feedDatas = await Promise.all(
-    urls.map((url) => (
-      rssParser.parseURL(url.feedUrls[0].url)
+    feeds.map((feed) => (
+      rssParser.parseURL(feed.url)
       .catch(() => (null))
     )),
   );

@@ -26,7 +26,7 @@ class ManageFeedsModal extends Element {
     linkModalAndButton(this.$modal, manageFeedsButton);
 
     this.appendChild(manageFeedsButton);
-    this.appendChild(this.$modal);
+    document.body.appendChild(this.$modal);
 
     this.loadFeeds();
   }

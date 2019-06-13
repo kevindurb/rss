@@ -23,7 +23,7 @@ FEED_ADDED	client/constants/events.js	/^export const FEED_ADDED = 'FEED_ADDED';$
 FeedsButton	client/components/ManageFeedsModal.js	/^    const manageFeedsButton = makeButton();$/;"	c
 FeedsHandler	scripts/refreshFeeds.js	/^const refreshFeedsHandler = require('..\/handlers\/refreshFeeds');$/;"	c
 FeedsService	client/services/Feeds.js	/^class FeedsService {$/;"	c
-Finder	handlers/refreshFeeds.js	/^const rssFinder = require('rss-finder');$/;"	c
+Finder	handlers/createFeed.js	/^const rssFinder = require('rss-finder');$/;"	c
 Gateway	handlers/createFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/deleteFeed.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/getFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
