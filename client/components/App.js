@@ -9,6 +9,8 @@ class App extends Element {
     const itemList = new ItemList();
     const navBar = new NavBar();
 
+    container.classList.add('mt-5');
+    container.classList.add('pt-3');
     container.appendChild(itemList);
 
     this.appendChild(new NavBar());

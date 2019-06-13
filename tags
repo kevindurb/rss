@@ -10,7 +10,7 @@ Api	client/services/api.js	/^class Api {$/;"	c
 App	client/App.js	/^class App {$/;"	c
 App	client/components/App.js	/^class App extends Element {$/;"	c
 Button	client/components/ManageFeedsModal.js	/^    const deleteButton = makeButton({$/;"	c
-Button	client/components/NavBar.js	/^    const refreshButton = makeButton({$/;"	c
+Button	client/components/NavBar.js	/^    this.$refreshButton = makeButton({ primary: true });$/;"	c
 Button	client/elements/Button.js	/^export const makeButton = (props) => {$/;"	c
 Container	client/Container.js	/^class Container {$/;"	c
 Container	client/elements/Container.js	/^export const makeContainer = () => {$/;"	c
@@ -20,7 +20,7 @@ ElementBuilder	client/utils/fluent.js	/^class ElementBuilder {$/;"	c
 EventEmitter	client/EventEmitter.js	/^class EventEmitter {$/;"	c
 FEEDS_REFRESHED	client/constants/events.js	/^export const FEEDS_REFRESHED = 'FEEDS_REFRESHED';$/;"	n
 FEED_ADDED	client/constants/events.js	/^export const FEED_ADDED = 'FEED_ADDED';$/;"	n
-FeedsButton	client/components/ManageFeedsModal.js	/^    const manageFeedsButton = makeButton({$/;"	c
+FeedsButton	client/components/ManageFeedsModal.js	/^    const manageFeedsButton = makeButton();$/;"	c
 FeedsHandler	scripts/refreshFeeds.js	/^const refreshFeedsHandler = require('..\/handlers\/refreshFeeds');$/;"	c
 FeedsService	client/services/Feeds.js	/^class FeedsService {$/;"	c
 Finder	handlers/refreshFeeds.js	/^const rssFinder = require('rss-finder');$/;"	c
@@ -31,6 +31,7 @@ Gateway	handlers/getItems.js	/^const itemsGateway = require('..\/gateways\/items
 Gateway	handlers/markRead.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const feedsGateway = require('..\/gateways\/feeds');$/;"	c
 Gateway	handlers/refreshFeeds.js	/^const itemsGateway = require('..\/gateways\/items');$/;"	c
+Icon	client/elements/Icon.js	/^export const makeIcon = ({ iconName }) => {$/;"	c
 ItemList	client/components/ItemList.js	/^class ItemList extends Element {$/;"	c
 ItemsService	client/services/items.js	/^class ItemsService {$/;"	c
 ListGroup	client/elements/ListGroup.js	/^export const makeListGroup = () => {$/;"	c
@@ -47,6 +48,7 @@ Router	router.js	/^const Router = require('express').Router;$/;"	c
 RssParser	handlers/refreshFeeds.js	/^const RssParser = require('rss-parser');$/;"	c
 ScrollHelper	client/utils/ScrollHelper.js	/^class ScrollHelper extends EventEmitter {$/;"	c
 StartOfDay	client/utils/date.js	/^export const getStartOfDay = () => {$/;"	c
+ToTopButton	client/components/NavBar.js	/^    this.$scrollToTopButton = makeButton({ primary: true });$/;"	c
 add	client/Container.js	/^  add(identifier, factory) {$/;"	f
 addEventListener	client/EventEmitter.js	/^  addEventListener(event, callback) {$/;"	f
 addFeed	client/components/ManageFeedsModal.js	/^  async addFeed() {$/;"	f
@@ -128,7 +130,7 @@ mount	client/components/ManageFeedsModal.js	/^  mount() {$/;"	f
 mount	client/components/NavBar.js	/^  mount() {$/;"	f
 mount	client/utils/Element.js	/^  mount() {}$/;"	f
 post	client/services/api.js	/^  post(url, request = {}) {$/;"	f
-read	gateways/items.js	/^      .find({ read: { $ne: true } })$/;"	o
+read	gateways/items.js	/^      .find(\/*{ read: { $ne: true } }*\/{})$/;"	o
 refreshFeeds	client/components/NavBar.js	/^  async refreshFeeds() {$/;"	f
 refreshFeeds	client/services/Feeds.js	/^  async refreshFeeds() {$/;"	f
 renderAddFeed	client/components/ManageFeedsModal.js	/^  renderAddFeed() {$/;"	f
@@ -136,5 +138,6 @@ renderFeed	client/components/ManageFeedsModal.js	/^  renderFeed(feed) {$/;"	f
 renderFeeds	client/components/ManageFeedsModal.js	/^  renderFeeds(feeds) {$/;"	f
 renderItem	client/components/ItemList.js	/^  renderItem(item) {$/;"	f
 renderItems	client/components/ItemList.js	/^  renderItems() {$/;"	f
+scrollToTop	client/components/NavBar.js	/^  scrollToTop() {$/;"	f
 setup	gateways/database.js	/^  async setup(db) {$/;"	f
 updateRead	client/components/ItemList.js	/^  updateRead() {$/;"	f

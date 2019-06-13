@@ -1,6 +1,7 @@
 import Element from '../utils/Element.js';
 import { makeListGroup } from '../elements/ListGroup.js';
 import { makeButton } from '../elements/Button.js';
+import { makeIcon } from '../elements/Icon.js';
 import { makeModal, linkModalAndButton } from '../elements/Modal.js';
 
 class ManageFeedsModal extends Element {
@@ -12,13 +13,15 @@ class ManageFeedsModal extends Element {
   }
 
   mount() {
-    const manageFeedsButton = makeButton({
-      text: 'Manage Feeds',
-    });
+    const manageFeedsButton = makeButton();
     this.$modal = makeModal({
       id: 'ManageFeedsModal',
       headerText: 'Manage Feeds',
     });
+
+    manageFeedsButton.appendChild(
+      makeIcon({ iconName: 'cog' })
+    );
 
     linkModalAndButton(this.$modal, manageFeedsButton);
 

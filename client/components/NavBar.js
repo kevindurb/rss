@@ -1,12 +1,14 @@
 import Element from '../utils/Element.js';
 import ManageFeedsModal from './ManageFeedsModal.js';
 import { makeButton } from '../elements/Button.js';
+import { makeIcon } from '../elements/Icon.js';
 import { makeContainer } from '../elements/Container.js';
 
 class NavBar extends Element {
   init(container) {
     this.feedsService = container.get('feedsService');
     this.refreshFeeds = this.refreshFeeds.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
   }
 
   mount() {
@@ -14,23 +16,38 @@ class NavBar extends Element {
     this.classList.add('navbar-light');
     this.classList.add('bg-light');
     this.classList.add('navbar-expand-lg');
+    this.classList.add('fixed-top');
 
     const manageFeedsModal = new ManageFeedsModal();
     const container = makeContainer();
-    const refreshButton = makeButton({
-      primary: true,
-      text: 'refresh',
-    });
+    this.$refreshButton = makeButton({ primary: true });
+    this.$scrollToTopButton = makeButton({ primary: true });
 
-    this.listenTo('click', refreshButton, this.refreshFeeds);
+    this.$refreshButton.appendChild(
+      makeIcon({ iconName: 'sync' })
+    );
+
+    this.$scrollToTopButton.appendChild(
+      makeIcon({ iconName: 'arrow-up' })
+    );
+
+    this.listenTo('click', this.$refreshButton, this.refreshFeeds);
+    this.listenTo('click', this.$scrollToTopButton, this.scrollToTop);
 
     container.appendChild(manageFeedsModal);
-    container.appendChild(refreshButton);
+    container.appendChild(this.$refreshButton);
+    container.appendChild(this.$scrollToTopButton);
     this.appendChild(container);
   }
 
   async refreshFeeds() {
+    this.$refreshButton.setAttribute('disabled', true);
     await this.feedsService.refreshFeeds();
+    this.$refreshButton.removeAttribute('disabled');
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 }
 

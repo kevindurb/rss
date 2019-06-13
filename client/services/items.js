@@ -12,7 +12,7 @@ class ItemsService {
   }
 
   markRead(id) {
-    return this.api.post(`/api/items/${encodeURIComponent(id)}/mark_read`);
+    // return this.api.post(`/api/items/${encodeURIComponent(id)}/mark_read`);
   }
 }
 
