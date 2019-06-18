@@ -138,6 +138,7 @@ renderFeed	client/components/ManageFeedsModal.js	/^  renderFeed(feed) {$/;"	f
 renderFeeds	client/components/ManageFeedsModal.js	/^  renderFeeds(feeds) {$/;"	f
 renderItem	client/components/ItemList.js	/^  renderItem(item) {$/;"	f
 renderItems	client/components/ItemList.js	/^  renderItems() {$/;"	f
+scrollToTop	client/components/ItemList.js	/^  scrollToTop() {$/;"	f
 scrollToTop	client/components/NavBar.js	/^  scrollToTop() {$/;"	f
 setup	gateways/database.js	/^  async setup(db) {$/;"	f
 updateRead	client/components/ItemList.js	/^  updateRead() {$/;"	f

@@ -36,7 +36,12 @@ class ItemList extends Element {
   async loadItems() {
     this.items = await this.itemService.getAllItems();
     this.renderItems();
+    this.scrollToTop();
     this.updateRead();
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 
   renderItem(item) {
